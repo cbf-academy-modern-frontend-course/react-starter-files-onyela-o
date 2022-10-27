@@ -1,9 +1,18 @@
-.main-button {
-  background-color: '#3392e4';
-  color: '#fff';
-  border: '0';
-  padding: '10px 20px';
-  font-weight: 'bold';
-  border-radius: '5px';
-  font-size: '60em';
+.main {
+  background-color: red;
+  color: #fff;
+  border: 0;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+.text {
+  color: blueviolet;
+  text-align: center;
+}
+
+.container {
+  text-align: center;
 }
