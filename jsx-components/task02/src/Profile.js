@@ -1,5 +1,14 @@
-const Profile = () => {
-  return <h1>"Return the JSX Profile function as a JSX element here"</h1>
+const Profile = (props) => {
+  return (
+    <main id='content' role='main' className='base'>
+      {props.name ? (
+        <h1>{props.name}'s React Page</h1>
+      ) : (
+        <h1>Just a react page</h1>
+      )}
+      {props.bio ? <p>{props.bio}</p> : <p>No bio</p>}
+    </main>
+  )
 }
 
 export default Profile
