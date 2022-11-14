@@ -8,6 +8,7 @@ const GadgetList = (props) => {
         <div key={`headphone-product-${index}`}>
           <div>{item.title}</div>
           <div style={{ color: 'red' }}>{item.price}</div>
+          <img src={item.src} alt='Headphones'></img>
         </div>
       ))}
     </main>
