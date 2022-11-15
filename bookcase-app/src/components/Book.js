@@ -42,7 +42,11 @@ Book.propTypes = {
 }
 
 Book.defaultProps = {
-  amount: 'No price found',
+  saleInfo: {
+    retailPrice: {
+      amount: 'No price found',
+    },
+  },
 }
 
 export default Book
