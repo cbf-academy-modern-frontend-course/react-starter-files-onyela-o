@@ -33,7 +33,7 @@ const Book = ({ book }) => {
 Book.propTypes = {
   volumeInfo: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    authors: PropTypes.array.isRequired,
+    authors: PropTypes.oneOf([PropTypes.string, PropTypes.array]),
     description: PropTypes.string.isRequired,
     imageLinks: PropTypes.shape({
       thumbnail: PropTypes.string.isRequired,
