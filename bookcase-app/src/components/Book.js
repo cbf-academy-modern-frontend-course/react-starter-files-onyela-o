@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 const Book = ({ book }) => {
   const {
     volumeInfo: {
@@ -23,6 +23,20 @@ const Book = ({ book }) => {
       <img src={thumbnail} alt={title} />
     </div>
   )
+}
+
+Book.propTypes = {
+  volumeInfo: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    authors: PropTypes.array.isRequired,
+    description: PropTypes.string.isRequired,
+    imageLinks: PropTypes.shape({
+      thumbnail: PropTypes.string.isRequired,
+    }),
+  }),
+  saleInfo: PropTypes.shape({
+    retailPrice: PropTypes.number.isRequired,
+  }),
 }
 
 export default Book
