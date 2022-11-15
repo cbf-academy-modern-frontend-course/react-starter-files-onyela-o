@@ -36,7 +36,7 @@ Book.propTypes = {
   }),
   saleInfo: PropTypes.shape({
     retailPrice: PropTypes.shape({
-      amount: PropTypes.number.isRequired,
+      amount: PropTypes.string.isRequired,
     }),
   }),
 }
