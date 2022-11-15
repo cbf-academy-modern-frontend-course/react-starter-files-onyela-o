@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
-import Book from './components/Book'
+import { useState } from 'react'
 import data from './models/books.json'
-import createBook from './components/createBook'
-import PropTypes from 'prop-types'
+import Book from './components/Book'
 
 function App() {
   const [books] = useState(data)
 
-  return books.map(createBook)
+  return books.map((book) => <Book book={book} />)
 }
 
 export default App

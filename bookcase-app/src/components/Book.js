@@ -1,20 +1,26 @@
 import React from 'react'
 
-function Book(props) {
+const Book = ({ book }) => {
+  const {
+    volumeInfo: {
+      title,
+      authors,
+      description,
+      imageLinks: { thumbnail },
+    },
+    saleInfo: { retailPrice },
+  } = book
   return (
     <div>
-      <h1>{props.title}</h1>
-      <div>
-        by{' '}
-        {props.authors?.length > 1 ? (
-          <span>{props.authors.join(' & ')}</span>
-        ) : (
-          <span>{props.authors}</span>
-        )}
-      </div>
-      {props.price ? <p>£{props.price}</p> : <p>No price</p>}
-      <img src={props.image} alt={props.title}></img>
-      <br></br>
+      <h1>{title}</h1>
+      {authors.length > 1 ? <p>{authors.join(' & ')}</p> : <p>{authors}</p>}
+      {retailPrice ? (
+        <p>£{retailPrice && retailPrice.amount}</p>
+      ) : (
+        <p>No price found</p>
+      )}
+      <p>{description.substring(0, 400)}...</p>
+      <img src={thumbnail} alt={title} />
     </div>
   )
 }
