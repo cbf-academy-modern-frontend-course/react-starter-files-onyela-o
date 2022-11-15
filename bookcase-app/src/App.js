@@ -3,7 +3,7 @@ import Book from './components/Book'
 import data from './models/books.json'
 
 function App() {
-  const [books, setBooks] = useState(data)
+  const [books] = useState(data)
 
   const createBook = (book) => {
     const { title, authors } = book.volumeInfo
