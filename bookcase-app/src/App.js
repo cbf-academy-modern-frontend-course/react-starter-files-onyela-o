@@ -6,15 +6,22 @@ function App() {
   const [books] = useState(data)
 
   const createBook = (book) => {
-    const { title, authors } = book.volumeInfo
-    const { thumbnail } = book.volumeInfo.imageLinks
+    const {
+      id,
+      volumeInfo: {
+        title,
+        authors,
+        imageLinks: { thumbnail },
+      },
+      saleInfo: { retailPrice },
+    } = book
     return (
       <Book
-        key={book.id}
+        key={id}
         title={title}
         image={thumbnail}
         authors={authors}
-        price={book?.saleInfo?.retailPrice?.amount}
+        price={retailPrice?.amount}
       ></Book>
     )
   }
