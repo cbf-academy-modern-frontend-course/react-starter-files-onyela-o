@@ -10,6 +10,10 @@ const Book = ({ book }) => {
     },
     saleInfo: { retailPrice },
   } = book
+
+  const handleClick = (title) => {
+    console.log(`The book ${title} was clicked`)
+  }
   return (
     <div>
       <h1>{title}</h1>
@@ -21,6 +25,7 @@ const Book = ({ book }) => {
       )}
       <p>{description.substring(0, 400)}...</p>
       <img src={thumbnail} alt={title} />
+      <button onClick={() => handleClick(title)}>Add +</button>
     </div>
   )
 }
