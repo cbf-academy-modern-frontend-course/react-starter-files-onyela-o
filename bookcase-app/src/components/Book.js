@@ -35,8 +35,14 @@ Book.propTypes = {
     }),
   }),
   saleInfo: PropTypes.shape({
-    retailPrice: PropTypes.number.isRequired,
+    retailPrice: PropTypes.shape({
+      amount: PropTypes.number.isRequired,
+    }),
   }),
+}
+
+Book.defaultProps = {
+  amount: 'No price found',
 }
 
 export default Book
